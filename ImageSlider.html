@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<link href="anotherproject.css" rel="stylesheet" type="text/css" />
+<link href="ImageSlider.css" rel="stylesheet" type="text/css" />
 <title>Image Slider</title>
 <style>
   #image {width: 500px; height: 300px;}
@@ -19,10 +19,10 @@
     <div class="row">
       <div class="text-center col-xs-12">
         <h1>ImageSlider</h1>
-        <img src="C:\Users\c623068\Desktop\Websites\Another Project\1.jpg" id="image" />
+        <img src="Images\1.jpg" id="image" />
         <br />
-        <button id="forward" class="btn btn-primary" onclick="changeForward()">Forward</button>
         <button id="back" class="btn btn-primary" onclick="changeBack()">Back</button>
+        <button id="forward" class="btn btn-primary" onclick="changeForward()">Forward</button>
       </div>
     </div>
   </div>
@@ -32,10 +32,10 @@
 function changeForward() {
   var imageSrc = document.getElementById('image').getAttribute('src');
   var currentImageNumber = imageSrc.substring(imageSrc.lastIndexOf('\\') + 1, imageSrc.lastIndexOf('\\') + 2);
-  if (currentImageNumber == 5) {
+  if (currentImageNumber == 6) {
       currentImageNumber = 0;
   }
-  var newImage = "C:\\Users\\c623068\\Desktop\\Websites\\Another Project\\" + (Number(currentImageNumber) + 1) + ".jpg";
+  var newImage = "Images\\" + (Number(currentImageNumber) + 1) + ".jpg";
   document.getElementById('image').setAttribute("src", newImage);
 }
 
@@ -43,15 +43,15 @@ function changeBack() {
   var imageSrc = document.getElementById('image').getAttribute('src');
   var currentImageNumber = imageSrc.substring(imageSrc.lastIndexOf('\\') + 1, imageSrc.lastIndexOf('\\') + 2);
   if (currentImageNumber == 1) {
-      currentImageNumber = 6;
+      currentImageNumber = 7;
   }
-  var newImage = "C:\\Users\\c623068\\Desktop\\Websites\\Another Project\\" + (Number(currentImageNumber) - 1) + ".jpg";
+  var newImage = "Images\\" + (Number(currentImageNumber) - 1) + ".jpg";
   document.getElementById('image').setAttribute("src", newImage);
 }
 
 
 </script>
-  <script src="anotherproject.js"></script>
+  <script src="ImageSlider.js"></script>
 </body>
 
 </html>
